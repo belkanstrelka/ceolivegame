@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const { sleep } = require('./../utils');
+const { sleep } = require('./../../utils');
 
 const INTERVAL_TIME = 1000;
 
@@ -14,20 +14,20 @@ const _notifySubscribers = function(lifeCycle) {
 
 class LifeCycle {
   constructor(params = {}) {
-    var { founder, company } = params;
+    var { founder, business } = params;
 
     if (_.isNil(founder)) {
       throw new Error("founder is required param");
     }
-    if (_.isNil(company)) {
-      throw new Error("company is required param");
+    if (_.isNil(business)) {
+      throw new Error("business is required param");
     }
 
     this._intervalTime = INTERVAL_TIME;
     this._tickHandlers = [];
     this._status = 'ready';
 
-    this.company = company;
+    this.business = business;
     this.founder = founder;
   }
 
@@ -52,13 +52,42 @@ class LifeCycle {
     this._status = 'ready';
   }
 
-  async tick() {
-    // что происходит в процессе хода
-    // founder генерит задачки
-    // founder выбирает какие задачки решить
+  resolveTask(business.SelectedTasks) {
+    // AvaliableStories, Skills += ОбщениеTask.resolve()
+    // BusinesImprovments += ОстальныыеTask.resolve()
+  }
 
-    // Команда проекта решать задачки
-      // в команде могут быть как внешние чуваки (фрилансеры) так и штатные (founder)
+  getSelectedTasks() {
+    return []
+    // return [reccurent + selected]
+  }
+
+  balanceBurn() {
+    // business.balance -= (UE.cost() + business.fixcost() + selectedTask.cost)
+  }
+
+  update() {
+    // business.balance -= (UE.cost() + business.fixcost() + selectedTask.cost)
+  }
+
+  async tick(newSelected) {
+    const { business, founder } = this;
+
+    // new BusinessDay()
+    business.addTasksToExecute(newSelected);
+
+    // один sprint
+    business._burn();
+    const resolvedTask = business._resolveTasks();
+    business._update(resolvedTask);
+
+    business.businessIdea.backlog += businessIdea.generateIdea(
+      business.team.skills()
+    )
+
+    founder.stories.add(
+      StoryProvider.generateStory(founder)
+    )
 
     _notifySubscribers(this);
   }

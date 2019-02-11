@@ -1,0 +1,13 @@
+^|Root Task, skills:hip-10;hack-10;hust-10, hours:8, cost: 0
+  ^|Legal stream, skills:hip-10;hack-10;hust-10, hours:8, cost: 0
+  ^|Product improvement stream, skills:hip-10;hack-10;hust-10, hours:8, cost: 0
+  ^|Research site dev stream, skills:hip-10;hack-10;hust-10, hours:8, cost: 0
+    ±|Site dev by yourself - research, skills:hip-10;hack-10;hust-10, hours:8, cost: 0
+      ^|Site dev by yourself - design, skills:hip-10;hack-10;hust-10, hours:8, cost: 0
+      ^|Site dev by yourself - development, skills:hip-10;hack-10;hust-10, hours:8, cost: 0
+        §|Site dev by yourself - bugfix, skills:hip-10;hack-10;hust-10, hours:8, cost: 0
+    ±|Site dev by constructor - research, skills:hip-10;hack-10;hust-10, hours:24, cost: 10
+      ^|Site dev by constructor - development, skills:hip-10;hack-10;hust-10, hours:8, cost: 0
+    ±|Site dev by studio, skills:hip-10;hack-10;hust-10, hours:40, cost: 3000
+      ^|Site dev by studio - review, skills:hip-10;hack-10;hust-10, hours:8, cost: 0
+      §|Task after all, skills:hip-10;hack-10;hust-10, hours:8, cost: 0
