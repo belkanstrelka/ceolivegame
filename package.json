@@ -6,12 +6,14 @@
   "scripts": {
     "start": "node ./src/app.js",
     "dev": "node --inspect-brk ./src/app.js",
-    "test": "jasmine"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.1",
+    "fastify": "^1.14.1",
+    "firebase": "^5.8.3",
+    "firebase-admin": "^7.0.0",
     "lodash": "^4.17.10",
     "moment": "^2.22.1",
     "mongodb": "^3.0.7",
